@@ -2,28 +2,28 @@
 @media (prefers-color-scheme:dark){:root{--bg:#17130F;--ink:#F7EFE6;--muted:#A89A8E;--accent:#FF9A6B}}
 body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Hiragino Sans',sans-serif;margin:0}
 main{max-width:720px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}h1{font-size:28px}h2{margin-top:40px}em{color:var(--muted)}</style></head><body><main><h1>Sugoi — Privacy Policy</h1>
-<p><em>Effective: 2026-10-09 · <a href="https://hunseonglee.github.io/sugoi-legal/privacy/">https://hunseonglee.github.io/sugoi-legal/privacy/</a></em></p>
+<p><em>Effective: 2026-10-10 · <a href="https://hunseonglee.github.io/sugoi-legal/privacy/">https://hunseonglee.github.io/sugoi-legal/privacy/</a></em></p>
 <p><a href="#english">English</a> · <a href="#한국어">한국어</a> · <a href="#日本語">日本語</a></p>
 <h2 id="english">English</h2>
 <p>Sugoi (수고이 / スゴイスゴイ, &quot;the app&quot;) is made by SDDT (&quot;we&quot;). Sugoi lets you log chores, including invisible work, and lets the people you live with say thanks. We collect as little as possible.</p>
 <p><strong>1. Local by default</strong></p>
 <ul>
-<li>When you use Sugoi on your own, everything you enter (chores, completions, notes, thank-yous, shopping items, settings) is stored <strong>only on your device</strong>. We run no server for it and cannot see it.</li>
+<li>When you use Sugoi on your own, everything you enter (chores, completions, notes, thank-yous, shopping items, settings) is stored <strong>only on your device</strong>. Until you create or join a household the app does not contact our server at all: no account is created, nothing is uploaded and no push token is registered. We cannot see your data. (Only the optional usage statistics in 5-1 and store purchases in 4 involve other services.)</li>
 <li>The demo household (a simulated partner) also runs entirely on your device.</li>
 <li>On iPhone, the Home Screen widget reads a small summary of today&#x27;s chores from the app&#x27;s own secure storage on the device.</li>
 </ul>
 <p><strong>2. Optional household sharing</strong></p>
 <p>If you create or join a household (only in versions where sharing is available), the household&#x27;s data is stored on our backend hosted by <strong>Supabase</strong> (Supabase, Inc., our data processor) so that members&#x27; devices can sync:</p>
 <ul>
-<li>an <strong>anonymous account</strong> (a random user ID; no email, phone number or password),</li>
-<li>the <strong>display name</strong> you choose and your member color,</li>
+<li>an <strong>anonymous account</strong> (a random user ID; no email, phone number or password), created only at that moment,</li>
+<li>the <strong>display name</strong> you choose, your member color, and your app language and time zone (used to write notifications in your language and to hold activity summaries overnight),</li>
 <li>the household name, member list and invite codes (valid for 7 days),</li>
 <li><strong>chores</strong> (title, emoji, category, effort points, repeat rules, assignee), <strong>completions</strong> (what was done, by whom, when, optional note), <strong>thank-yous</strong> (heart, sticker or a message of up to 60 characters), and <strong>shopping items</strong> (name, section, who claimed or checked it).</li>
 <li>When you start sharing, the entries you logged on your own are uploaded into the household.</li>
 </ul>
 <p>Household data is visible only to members of that household. It is used only to provide the app&#x27;s features, never sold, and never used for advertising or profiling. Data is encrypted in transit (TLS).</p>
 <p><strong>3. Notifications</strong></p>
-<p>If you allow notifications, we store your device&#x27;s push token with your user ID to send you thank-yous right away and a bundled summary of what your household did. Push messages are delivered through Apple Push Notification service or Firebase Cloud Messaging (Google). You can turn notifications off at any time in system settings.</p>
+<p>If you allow notifications while sharing a household, we store your device&#x27;s push token with your user ID to send you thank-yous right away and a bundled summary of what your household did. Summaries are not sent between 22:00 and 08:00 in your time zone; they wait until the morning. If the same device later signs in with a new account, the token moves to that account. Push messages are delivered through Apple Push Notification service or Firebase Cloud Messaging (Google). You can turn notifications off at any time in system settings.</p>
 <p><strong>4. Purchases</strong></p>
 <p>Sugoi Premium is a household subscription purchased through Apple or Google. <strong>RevenueCat</strong> (our purchase-management provider) receives your purchase history and an app user ID (anonymous, or your household account ID when sharing is on) to verify the subscription and unlock Premium for your household. We never receive your payment card details. RevenueCat privacy policy: <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
 <p><strong>5. What we do not do</strong></p>
@@ -35,12 +35,14 @@ main{max-width:720px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
 <p><strong>7. Deleting your data</strong></p>
 <ul>
 <li>Solo use: delete entries in the app, use &quot;Delete all data&quot;, or uninstall the app.</li>
-<li>Household: <strong>Household → Delete account and data</strong> permanently deletes your account, memberships, push tokens and the entries, thank-yous, chores and shopping items you created.</li>
+<li>Household: <strong>Household → Delete account and data</strong> leaves the household and permanently deletes your account, your profile (display name, language, time zone), push tokens, blocks and your subscription status record. By default it also deletes your entries: your thank-yous are deleted, and your completions are removed from the household (only a content-free deletion marker without the title or note remains, so that the other members&#x27; devices remove the entry too).</li>
+<li>If you choose to keep your entries when deleting your account, your completions and thank-yous stay in the household&#x27;s history as &quot;former member&quot;, linked only to a random ID that no longer belongs to any account.</li>
+<li>Chores and shopping items you added belong to the household and stay for the remaining members; they keep only that random creator ID. The member list keeps a nameless &quot;former member&quot; placeholder (member color and join/leave dates) so past entries still add up.</li>
 <li><strong>Leaving</strong> a household (without deleting your account) keeps your past entries visible to the remaining members as &quot;former member&quot;, so the household&#x27;s history still adds up — unless you choose <strong>&quot;Delete my entries&quot;</strong> when leaving.</li>
 <li>You can also email us to request deletion. Backups on our provider roll over within 30 days.</li>
 </ul>
 <p><strong>8. Retention</strong></p>
-<p>Household data is kept while the household has at least one member and deleted when the last member leaves or deletes their account. Reports are kept up to 1 year.</p>
+<p>Household data is kept while the household has at least one member and deleted when the last member leaves or deletes their account. Reports are deleted automatically after 1 year (a report filed by an account that is later deleted is kept without the link to that account until then). Subscription event records are deleted after 90 days and expired invite codes 30 days after they expire.</p>
 <p><strong>9. Children</strong></p>
 <p>Sugoi is not directed at children under 13 (or the minimum age in your country) and we do not knowingly collect their data. If you believe a child has provided data, contact us and we will delete it.</p>
 <p><strong>10. Your rights</strong></p>
@@ -51,22 +53,22 @@ main{max-width:720px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
 <p>수고이(Sugoi, &quot;앱&quot;)는 SDDT(&quot;저희&quot;)가 만든 앱입니다. 보이지 않는 일을 포함한 집안일을 기록하고, 함께 사는 사람끼리 &quot;수고했어&quot;를 주고받을 수 있어요. 개인정보는 최소한으로만 다룹니다.</p>
 <p><strong>1. 기본은 기기 안에만</strong></p>
 <ul>
-<li>혼자 쓸 때 입력한 모든 정보(집안일, 기록, 메모, 수고했어, 장보기 항목, 설정)는 <strong>내 기기에만</strong> 저장됩니다. 저희는 이를 위한 서버를 운영하지 않으며 볼 수 없습니다.</li>
+<li>혼자 쓸 때 입력한 모든 정보(집안일, 기록, 메모, 수고했어, 장보기 항목, 설정)는 <strong>내 기기에만</strong> 저장됩니다. 우리 집을 만들거나 참여하기 전에는 앱이 저희 서버에 전혀 접속하지 않습니다. 계정을 만들지 않고, 아무것도 업로드하지 않으며, 푸시 토큰도 등록하지 않습니다. 저희는 이 정보를 볼 수 없습니다. (선택 사항인 5-1 사용 통계와 4 스토어 구매만 다른 서비스를 거칩니다.)</li>
 <li>데모 가족(가상의 구성원)도 모두 기기 안에서만 동작합니다.</li>
 <li>iPhone 홈 화면 위젯은 기기 안 앱 전용 보안 저장소에서 오늘 할 일 요약을 읽습니다.</li>
 </ul>
 <p><strong>2. 선택: 우리 집 함께 쓰기</strong></p>
 <p>우리 집을 만들거나 참여하면(공유 기능이 제공되는 버전에 한함) 구성원 기기 간 동기화를 위해 다음 정보가 <strong>Supabase</strong>(Supabase, Inc., 수탁자)가 호스팅하는 서버에 저장됩니다.</p>
 <ul>
-<li><strong>익명 계정</strong>(무작위 사용자 ID, 이메일·전화번호·비밀번호 없음)</li>
-<li>직접 정한 <strong>표시 이름</strong>과 색상</li>
+<li><strong>익명 계정</strong>(무작위 사용자 ID, 이메일·전화번호·비밀번호 없음). 이때 처음 만들어집니다.</li>
+<li>직접 정한 <strong>표시 이름</strong>, 색상, 앱 언어와 시간대(알림을 내 언어로 쓰고 활동 요약을 밤사이 보류하는 데 사용)</li>
 <li>우리 집 이름, 구성원 목록, 초대 코드(7일간 유효)</li>
 <li><strong>집안일</strong>(제목, 이모지, 카테고리, 수고 포인트, 반복 규칙, 담당), <strong>완료 기록</strong>(무엇을, 누가, 언제, 선택 메모), <strong>수고했어</strong>(하트, 스티커, 60자 이내 메시지), <strong>장보기 항목</strong>(이름, 구역, 사 오기로 한 사람·체크한 사람)</li>
 <li>함께 쓰기를 시작하면 혼자 쓰던 기록도 우리 집으로 업로드됩니다.</li>
 </ul>
 <p>우리 집 데이터는 그 집 구성원만 볼 수 있고, 앱 기능 제공에만 쓰이며, 판매하거나 광고·프로파일링에 쓰지 않습니다. 전송 중 암호화(TLS)됩니다.</p>
 <p><strong>3. 알림</strong></p>
-<p>알림을 허용하면 수고했어를 바로 보내고 우리 집 활동 요약을 모아 보내기 위해 기기의 푸시 토큰을 사용자 ID와 함께 저장합니다. 푸시는 Apple Push Notification service 또는 Firebase Cloud Messaging(Google)으로 전달됩니다. 언제든 시스템 설정에서 끌 수 있습니다.</p>
+<p>우리 집을 함께 쓰는 중에 알림을 허용하면 수고했어를 바로 보내고 우리 집 활동 요약을 모아 보내기 위해 기기의 푸시 토큰을 사용자 ID와 함께 저장합니다. 활동 요약은 내 시간대 기준 22:00~08:00에는 보내지 않고 아침까지 기다립니다. 같은 기기에서 새 계정으로 다시 시작하면 토큰은 새 계정으로 옮겨집니다. 푸시는 Apple Push Notification service 또는 Firebase Cloud Messaging(Google)으로 전달됩니다. 언제든 시스템 설정에서 끌 수 있습니다.</p>
 <p><strong>4. 구매</strong></p>
 <p>수고이 프리미엄은 Apple 또는 Google을 통해 구매하는 우리 집 구독입니다. 구매 관리 서비스 <strong>RevenueCat</strong>이 구독 확인과 우리 집 프리미엄 활성화를 위해 구매 내역과 앱 사용자 ID(익명 ID 또는 함께 쓰기 중에는 계정 ID)를 받습니다. 카드 정보는 저희가 받지 않습니다. RevenueCat 개인정보 처리방침: <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
 <p><strong>5. 하지 않는 것</strong></p>
@@ -78,12 +80,14 @@ main{max-width:720px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
 <p><strong>7. 데이터 삭제</strong></p>
 <ul>
 <li>혼자 쓸 때: 앱에서 기록을 지우거나 &quot;모든 데이터 삭제&quot;를 누르거나 앱을 삭제하세요.</li>
-<li>우리 집: <strong>우리 집 → 계정과 데이터 삭제</strong>로 계정, 구성원 정보, 푸시 토큰, 내가 만든 기록·수고했어·집안일·장보기 항목이 영구 삭제됩니다.</li>
+<li>우리 집: <strong>우리 집 → 계정과 데이터 삭제</strong>를 하면 우리 집에서 나가고 계정, 프로필(표시 이름, 언어, 시간대), 푸시 토큰, 차단 목록, 구독 상태 기록이 영구 삭제됩니다. 기본적으로 내 기록도 삭제됩니다. 내가 보낸 수고했어는 삭제되고, 완료 기록은 우리 집에서 지워집니다(다른 구성원 기기에서도 지워지도록 제목·메모 없는 삭제 표시만 남습니다).</li>
+<li>계정을 삭제할 때 기록을 남기기로 선택하면, 완료 기록과 수고했어는 &quot;이전 구성원&quot;의 기록으로 우리 집에 남으며 더 이상 어떤 계정과도 연결되지 않는 무작위 ID만 붙어 있습니다.</li>
+<li>내가 추가한 집안일과 장보기 항목은 우리 집의 것이므로 남은 구성원을 위해 유지되며, 만든 사람으로는 그 무작위 ID만 남습니다. 구성원 목록에는 지난 기록이 맞게 보이도록 이름 없는 &quot;이전 구성원&quot; 자리(색상, 참여·나간 날짜)가 남습니다.</li>
 <li>계정을 지우지 않고 우리 집에서 <strong>나가기</strong>만 하면, 남은 구성원의 기록과 통계가 유지되도록 내 지난 기록은 &quot;이전 구성원&quot;으로 남습니다. 나갈 때 <strong>&quot;내 기록도 삭제&quot;</strong>를 선택하면 함께 삭제됩니다.</li>
 <li>이메일로 삭제를 요청할 수도 있습니다. 서비스 제공자의 백업은 30일 이내에 순환 삭제됩니다.</li>
 </ul>
 <p><strong>8. 보관 기간</strong></p>
-<p>우리 집 데이터는 구성원이 한 명 이상 있는 동안 보관되며, 마지막 구성원이 나가거나 계정을 삭제하면 삭제됩니다. 신고 내역은 최대 1년간 보관합니다.</p>
+<p>우리 집 데이터는 구성원이 한 명 이상 있는 동안 보관되며, 마지막 구성원이 나가거나 계정을 삭제하면 삭제됩니다. 신고 내역은 1년이 지나면 자동으로 삭제됩니다(그 전에 신고한 사람이 계정을 삭제하면 계정과의 연결만 끊고 보관합니다). 구독 이벤트 기록은 90일 후, 만료된 초대 코드는 만료 30일 후 삭제됩니다.</p>
 <p><strong>9. 아동</strong></p>
 <p>만 14세 미만(또는 거주 국가의 최소 연령 미만) 아동을 대상으로 하지 않으며 아동의 정보를 고의로 수집하지 않습니다. 아동이 정보를 제공했다고 판단되면 연락 주세요. 삭제하겠습니다.</p>
 <p><strong>10. 이용자의 권리</strong></p>
@@ -94,22 +98,22 @@ main{max-width:720px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
 <p>スゴイスゴイ（Sugoi、「本アプリ」）はSDDT（「当方」）が提供するアプリです。名もなき家事を含む家事を記録し、一緒に暮らす人どうしで「ありがとう」を伝え合えます。個人情報の取り扱いは最小限にとどめます。</p>
 <p><strong>1. 基本は端末内だけ</strong></p>
 <ul>
-<li>ひとりで使う間、入力した情報（家事、記録、メモ、ありがとう、買い物項目、設定）は<strong>端末内にのみ</strong>保存されます。当方はそのためのサーバーを運用しておらず、内容を見ることはできません。</li>
+<li>ひとりで使う間、入力した情報（家事、記録、メモ、ありがとう、買い物項目、設定）は<strong>端末内にのみ</strong>保存されます。家を作成または参加するまで、本アプリは当方のサーバーに一切接続しません。アカウントは作成されず、何もアップロードされず、プッシュトークンも登録されません。当方は内容を見ることができません。（任意の5-1の利用状況と、4のストア購入のみ他のサービスを経由します。）</li>
 <li>デモの家族（シミュレーションのパートナー）もすべて端末内で動作します。</li>
 <li>iPhoneのホーム画面ウィジェットは、端末内のアプリ専用の安全な保存領域から今日の家事の概要を読み取ります。</li>
 </ul>
 <p><strong>2. 任意：家族との共有</strong></p>
 <p>家を作成または参加すると（共有機能を提供するバージョンのみ）、メンバーの端末間で同期するため、次の情報を<strong>Supabase</strong>（Supabase, Inc.、委託先）がホストするサーバーに保存します。</p>
 <ul>
-<li><strong>匿名アカウント</strong>（ランダムなユーザーID。メールアドレス・電話番号・パスワードなし）</li>
-<li>ご自身で決めた<strong>表示名</strong>とカラー</li>
+<li><strong>匿名アカウント</strong>（ランダムなユーザーID。メールアドレス・電話番号・パスワードなし）。このとき初めて作成されます。</li>
+<li>ご自身で決めた<strong>表示名</strong>、カラー、アプリの言語とタイムゾーン（通知をご自身の言語で作成し、活動のまとめを夜間保留するために使用）</li>
 <li>家の名前、メンバー一覧、招待コード（7日間有効）</li>
 <li><strong>家事</strong>（名前、絵文字、カテゴリ、家事ポイント、繰り返し、担当）、<strong>完了記録</strong>（何を・誰が・いつ・任意のメモ）、<strong>ありがとう</strong>（ハート、スタンプ、60文字以内のメッセージ）、<strong>買い物項目</strong>（名前、売り場、買ってくる人・チェックした人）</li>
 <li>共有を始めると、ひとりで記録していた内容も家にアップロードされます。</li>
 </ul>
 <p>家のデータはその家のメンバーだけが閲覧でき、機能の提供にのみ使用し、販売や広告・プロファイリングには使いません。通信は暗号化（TLS）されます。</p>
 <p><strong>3. 通知</strong></p>
-<p>通知を許可すると、ありがとうをすぐに届け、家族の活動をまとめてお知らせするため、端末のプッシュトークンをユーザーIDと一緒に保存します。通知はApple Push Notification serviceまたはFirebase Cloud Messaging（Google）経由で届きます。システム設定からいつでもオフにできます。</p>
+<p>家を共有している間に通知を許可すると、ありがとうをすぐに届け、家族の活動をまとめてお知らせするため、端末のプッシュトークンをユーザーIDと一緒に保存します。活動のまとめは、お住まいのタイムゾーンで22:00〜8:00の間は送らず、朝まで待ちます。同じ端末で新しいアカウントを使い始めると、トークンは新しいアカウントに移ります。通知はApple Push Notification serviceまたはFirebase Cloud Messaging（Google）経由で届きます。システム設定からいつでもオフにできます。</p>
 <p><strong>4. 購入</strong></p>
 <p>スゴイスゴイ プレミアムはAppleまたはGoogleで購入する世帯サブスクリプションです。購入管理サービス<strong>RevenueCat</strong>が、購読の確認と家族へのプレミアム適用のため、購入履歴とアプリのユーザーID（匿名ID、共有中はアカウントID）を受け取ります。カード情報を当方が受け取ることはありません。RevenueCatのプライバシーポリシー：<a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
 <p><strong>5. 行わないこと</strong></p>
@@ -121,12 +125,14 @@ main{max-width:720px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}
 <p><strong>7. データの削除</strong></p>
 <ul>
 <li>ひとりで使う場合：アプリで記録を削除するか、「すべてのデータを削除」を使うか、アプリを削除してください。</li>
-<li>家を共有している場合：<strong>家 → アカウントとデータを削除</strong>で、アカウント、メンバー情報、プッシュトークン、自分が作成した記録・ありがとう・家事・買い物項目が完全に削除されます。</li>
+<li>家を共有している場合：<strong>家 → アカウントとデータを削除</strong>を行うと家から退出し、アカウント、プロフィール（表示名、言語、タイムゾーン）、プッシュトークン、ブロック、購読状態の記録が完全に削除されます。既定では自分の記録も削除されます。送ったありがとうは削除され、完了記録は家から消去されます（他のメンバーの端末からも消えるよう、名前やメモのない削除の目印だけが残ります）。</li>
+<li>アカウント削除時に記録を残すことを選んだ場合、完了記録とありがとうは「以前のメンバー」の記録として家に残り、どのアカウントにも結び付かないランダムなIDだけが付きます。</li>
+<li>自分が追加した家事と買い物項目は家のものとして残るメンバーのために保持され、作成者としてそのランダムなIDだけが残ります。メンバー一覧には、過去の記録が正しく表示されるよう名前のない「以前のメンバー」の枠（カラー、参加・退出日）が残ります。</li>
 <li>アカウントを削除せずに家から<strong>退出</strong>した場合、残るメンバーの履歴と統計が保たれるよう、過去の記録は「以前のメンバー」として残ります。退出時に<strong>「自分の記録も削除」</strong>を選ぶと一緒に削除されます。</li>
 <li>メールで削除を依頼することもできます。委託先のバックアップは30日以内に順次消去されます。</li>
 </ul>
 <p><strong>8. 保存期間</strong></p>
-<p>家のデータはメンバーが1人以上いる間保存し、最後のメンバーが退出またはアカウントを削除すると削除します。通報記録は最長1年間保存します。</p>
+<p>家のデータはメンバーが1人以上いる間保存し、最後のメンバーが退出またはアカウントを削除すると削除します。通報記録は1年を過ぎると自動的に削除します（それまでに通報者がアカウントを削除した場合は、アカウントとの結び付きを外して保存します）。購読イベントの記録は90日後、期限切れの招待コードは期限の30日後に削除します。</p>
 <p><strong>9. 子ども</strong></p>
 <p>13歳未満（またはお住まいの国の最低年齢未満）の子どもを対象としておらず、意図して情報を収集しません。子どもが情報を提供したと思われる場合はご連絡ください。削除します。</p>
 <p><strong>10. 利用者の権利</strong></p>
